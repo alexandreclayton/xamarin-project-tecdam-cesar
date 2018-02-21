@@ -15,18 +15,16 @@ namespace BitcoinSimulator
         public BitcoinSimulatorPage()
         {
             InitializeComponent();
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
-                
+            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            {   
                 loadQuote();
                 return true;
             });
         }
 
-        async public void loadQuote()
+        public void loadQuote()
         {
             loading.IsRunning = true;
-            await App.Sleep(5000);
             Uri uri = new Uri("https://api.blinktrade.com/api/v1/BRL/ticker");
             request = WebRequest.Create(uri);
             request.BeginGetResponse(WebRequestCallback, null);
@@ -43,7 +41,7 @@ namespace BitcoinSimulator
                 double brlBuy = Double.Parse(((txtBrl.Text == null) ? "0.0" : txtBrl.Text));
                 double btc = (brlBuy / quote);
                 lbQuote.Text = String.Format("R$ {0:0.00}", quote);
-                txtBTC.Text = String.Format("BTC {0:0.########}", (brlBuy / quote));
+                txtBTC.Text = String.Format("Você compra {0:0.########} bitcoins", (brlBuy / quote));
                 loading.IsRunning = false;
             });
         }
