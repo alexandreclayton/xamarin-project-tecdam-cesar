@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BitcoinSimulator" x:Class="BitcoinSimulator.BitcoinSimulatorPage" Padding="10">
+    <StackLayout>
+        <Label IsVisible="{Binding Source={x:Reference loading}, Path=!IsRunning}" Text="loading..." VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+        <StackLayout IsVisible="{Binding Source={x:Reference loading}, Path=!IsRunning}" VerticalOptions="CenterAndExpand">
+            <Label Text="Cotação atual" HorizontalOptions="Center" />
+            <Label x:Name="lbQuote" Text="0.00" HorizontalOptions="Center" />
+            <Label Text="Valor em R$" HorizontalOptions="Center" />
+            <Entry x:Name="txtBrl" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Placeholder="100,00" HorizontalTextAlignment="Center" Keyboard="Numeric" />
+            <Label x:Name="txtBTC" Text="Valor em BTC" HorizontalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout VerticalOptions="End">
+            <ActivityIndicator x:Name="loading" IsRunning="false" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
