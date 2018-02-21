@@ -45,5 +45,10 @@ namespace BitcoinSimulator
                 loading.IsRunning = false;
             });
         }
+
+        void Handle_Completed(object sender, System.EventArgs e)
+        {
+            loadQuote();
+        }
     }
 }

@@ -12,7 +12,14 @@
                 HorizontalOptions="Center" 
                 FontSize="40"/>
             <Label Text="Informe um valor em R$ para compra" HorizontalOptions="Center" />
-            <Entry x:Name="txtBrl" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Placeholder="100,00" HorizontalTextAlignment="Center" Keyboard="Numeric" />
+            <Entry 
+                x:Name="txtBrl" 
+                VerticalOptions="Start" 
+                HorizontalOptions="FillAndExpand" 
+                Placeholder="100,00" 
+                HorizontalTextAlignment="Center" 
+                Keyboard="Numeric"
+                Completed="Handle_Completed"/>
         </StackLayout>
         <StackLayout>
             <Label 
