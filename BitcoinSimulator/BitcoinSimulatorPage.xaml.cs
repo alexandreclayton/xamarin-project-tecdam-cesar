@@ -49,6 +49,7 @@ namespace BitcoinSimulator
         void Handle_Completed(object sender, System.EventArgs e)
         {
             loadQuote();
+            slResume.IsVisible = (txtBrl.Text != null);
         }
     }
 }

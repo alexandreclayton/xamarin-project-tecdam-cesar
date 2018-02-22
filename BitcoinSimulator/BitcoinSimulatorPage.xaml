@@ -21,7 +21,7 @@
                 Keyboard="Numeric"
                 Completed="Handle_Completed"/>
         </StackLayout>
-        <StackLayout>
+        <StackLayout x:Name="slResume" IsVisible="false">
             <Label 
                 Text="{Binding Source={x:Reference txtBrl}, Path=Text, StringFormat='Com R$ {0:0.00}'}"
                 HorizontalOptions="CenterAndExpand" />
