@@ -15,6 +15,14 @@ namespace BitcoinSimulator
         public BitcoinSimulatorPage()
         {
             InitializeComponent();
+            loadQuote();
+
+            if (Application.Current.Properties.ContainsKey("vlrbrl"))
+            {
+                txtBrl.Text = Application.Current.Properties["vlrbrl"].ToString();
+                slResume.IsVisible = true;
+            }
+
             Device.StartTimer(TimeSpan.FromSeconds(10), () =>
             {   
                 loadQuote();
@@ -50,6 +58,11 @@ namespace BitcoinSimulator
         {
             loadQuote();
             slResume.IsVisible = (txtBrl.Text != null);
+        }
+
+        public void SalvarVlrBrl()
+        {
+            Application.Current.Properties["vlrbrl"] = txtBrl.Text;
         }
     }
 }

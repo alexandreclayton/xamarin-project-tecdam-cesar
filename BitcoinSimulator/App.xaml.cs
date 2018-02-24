@@ -20,6 +20,7 @@ namespace BitcoinSimulator
         protected override void OnSleep()
         {
             // Handle when your app sleeps
+            ((BitcoinSimulatorPage)MainPage).SalvarVlrBrl();
         }
 
         protected override void OnResume()
